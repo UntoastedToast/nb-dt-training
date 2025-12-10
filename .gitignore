@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.pylintrc
+
+# Distribution / packaging
+.Python
+build/
+dist/
+wheels/
+*.egg-info/
+.installed.cfg
+*.manifest
+*.spec
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Editors
+.vscode/ # VS Code
+.idea/   # IntelliJ / PyCharm
+
+# OS-specific
+.DS_Store
+.Trash/
+Thumbs.db
+
+# My custom stuff
+# Generated evaluation results
+data/mnist/*
+!data/mnist/README.md
+
+# Temporary files
+*.tmp
+*.log

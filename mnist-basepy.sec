@@ -1,0 +1,31 @@
+import csv
+import random
+
+def read_dataset(filename):
+  x = []
+  y = []
+  with open(filename, newline='') as csvfile:
+    next(csvfile)
+    reader = csv.reader(csvfile, delimiter=',')
+    for row in reader:
+      y.append(int(row[0]))
+      x.append([int(pixel) for pixel in row[1:]])
+  return (x,y)
+
+def display_item(item):
+  cell = 0
+  for r in range(0,28):
+    for c in range(0,28):
+      print("{:3.0f}".format(item[cell]), end="")
+      cell = cell + 1
+    print()    
+
+x_train, y_train = read_dataset("mnist/train.csv")
+x_test, y_test = read_dataset("mnist/test.csv")
+
+print(f"Training items: {len(x_train)}")
+print(f"Test items: {len(x_test)}")
+
+item = random.randint(0,len(x_train))
+print(f"This is item {item}:")
+display_item(x_train[item])
